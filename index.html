@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ryan Muriel | Portfolio</title>
+    <!-- Apply saved light/dark theme before the page draws (prevents a flash) -->
+    <script>
+        try {
+            var t = localStorage.getItem('theme') ||
+                (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+            document.documentElement.setAttribute('data-theme', t);
+        } catch (e) { document.documentElement.setAttribute('data-theme', 'dark'); }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav>
+        <div class="nav-inner">
+            <a href="#home" class="logo"><span>Ryan Muriel</span></a>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button id="theme-toggle" aria-label="Switch light/dark mode"><i class='bx bx-sun'></i></button>
+                <i class='bx bx-menu-alt-right' id="menu"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ================= HOME ================= -->
+    <section id="home">
+        <div class="container hero">
+            <div class="hero-text">
+                <p class="eyebrow">Hello, I'm</p>
+                <h1><span>Ryan Muriel</span></h1>
+                <h2 class="hero-role">Electrical &amp; Computer Engineer</h2>
+                <p class="hero-location"><i class='bx bx-map'></i> Based in New Jersey</p>
+                <p class="hero-summary">
+                    I'm a senior at Rutgers with hands-on experience in
+                    embedded systems, digital logic, and utility data analytics. I love building ideas into
+                    working hardware and software, and I'm looking for opportunities to learn from experienced
+                    engineers and contribute to real projects.
+                </p>
+                <div class="btn-box">
+                    <a href="#projects" class="btn">View Projects</a>
+                    <a href="#contact" class="btn btn-primary">Contact Me</a>
+                </div>
+            </div>
+            <img class="hero-photo" src="images/profile.jpg" alt="Photo of Ryan Muriel" onerror="this.style.display='none'">
+        </div>
+    </section>
+
+    <!-- ================= ABOUT ================= -->
+    <section id="about">
+        <div class="container">
+            <div class="section-head">
+                <h2 class="section-title"><span>About Me</span></h2>
+            </div>
+
+            <p class="about-text">
+                I'm a first-generation Ecuadorian American, raised speaking both Spanish and English. I love
+                meeting people from different backgrounds and sharing a little of my culture along the way.
+                Outside of class, you'll find me playing soccer, cooking, or dancing, and I bring that same
+                energy and optimism to everything I do.
+            </p>
+
+            <h3 class="sub-title">Skills &amp; Education</h3>
+
+            <div class="skills-grid">
+                <div class="info-card">
+                    <h4><i class='bx bx-code-alt'></i> Programming &amp; Tools</h4>
+                    <ul class="chip-list">
+                        <li class="chip">Power BI <img class="chip-logo" src="images/exelon-logo.png" alt="Exelon" title="Used at Exelon – Atlantic City Electric"></li>
+                        <li class="chip">Python</li>
+                        <li class="chip">Java</li>
+                        <li class="chip">HTML</li>
+                        <li class="chip">MATLAB</li>
+                        <li class="chip">SolidWorks</li>
+                        <li class="chip">Microsoft Excel</li>
+                    </ul>
+                </div>
+
+                <div class="info-card">
+                    <h4><i class='bx bx-chip'></i> Hardware &amp; Lab</h4>
+                    <ul class="chip-list">
+                        <li class="chip">Embedded Systems (ESP32)</li>
+                        <li class="chip">Sensor Integration</li>
+                        <li class="chip">Power Distribution Systems</li>
+                        <li class="chip">Soldering</li>
+                        <li class="chip">Breadboarding</li>
+                        <li class="chip">Circuit Testing &amp; Troubleshooting</li>
+                        <li class="chip">Process Improvement</li>
+                    </ul>
+                </div>
+
+                <div class="info-card school">
+                    <img src="images/rutgers-logo.png" alt="Rutgers University logo" onerror="this.style.display='none'">
+                    <h4>Rutgers University</h4>
+                    <p>B.S. Electrical &amp; Computer Engineering</p>
+                    <p class="muted">Packaging Engineering Certificate</p>
+                    <small>May 2027</small>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= PROJECTS ================= -->
+    <section id="projects">
+        <div class="container">
+            <div class="section-head">
+                <h2 class="section-title"><span>Projects</span></h2>
+            </div>
+
+            <!-- Square tiles: click one to open its details in the pop-up below.
+                 Each tile's data-target matches the id of a <template> with the full write-up. -->
+            <div class="project-grid">
+
+                <button class="tile" data-target="p-hvac" aria-haspopup="dialog">
+                    <div class="tile-media">
+                        <img src="images/hvac-prototype.jpg" alt="EcoSmart HVAC breadboard prototype with ESP32, relay and sensors">
+                    </div>
+                    <div class="tile-caption">
+                        <p class="project-type">Capstone</p>
+                        <h3>EcoSmart HVAC Control</h3>
+                    </div>
+                    <div class="tile-overlay"><i class='bx bx-expand-alt'></i><p>Click to enlarge</p></div>
+                    <div class="tile-hint"><i class='bx bx-expand-alt'></i> Tap to enlarge</div>
+                </button>
+
+                <button class="tile" data-target="p-tool" aria-haspopup="dialog">
+                    <div class="tile-media">
+                        <img class="contain" src="images/pocket-tool.png" alt="SolidWorks model of a pocket multi-tool">
+                    </div>
+                    <div class="tile-caption">
+                        <p class="project-type">CAD Design</p>
+                        <h3>Pocket Tool</h3>
+                    </div>
+                    <div class="tile-overlay"><i class='bx bx-expand-alt'></i><p>Click to enlarge</p></div>
+                    <div class="tile-hint"><i class='bx bx-expand-alt'></i> Tap to enlarge</div>
+                </button>
+
+                <button class="tile" data-target="p-traffic" aria-haspopup="dialog">
+                    <div class="tile-media signal-art" aria-hidden="true">
+                        <div class="signal">
+                            <div class="signal-body"><b></b><b></b><b class="on-g"></b></div>
+                            <small>Main</small>
+                        </div>
+                        <div class="signal">
+                            <div class="signal-body"><b class="on-r"></b><b></b><b></b></div>
+                            <small>Cross</small>
+                        </div>
+                    </div>
+                    <div class="tile-caption">
+                        <p class="project-type">Digital Logic</p>
+                        <h3>Traffic Signal State Machine</h3>
+                    </div>
+                    <div class="tile-overlay"><i class='bx bx-expand-alt'></i><p>Click to enlarge</p></div>
+                    <div class="tile-hint"><i class='bx bx-expand-alt'></i> Tap to enlarge</div>
+                </button>
+
+                <button class="tile" data-target="p-sora" aria-haspopup="dialog">
+                    <div class="tile-media">
+                        <img class="top" src="images/sora-calibration.jpg" alt="SORA style calibration page">
+                    </div>
+                    <div class="tile-caption">
+                        <p class="project-type">Software Engineering</p>
+                        <h3>SORA</h3>
+                    </div>
+                    <div class="tile-overlay"><i class='bx bx-expand-alt'></i><p>Click to enlarge</p></div>
+                    <div class="tile-hint"><i class='bx bx-expand-alt'></i> Tap to enlarge</div>
+                </button>
+
+            </div>
+
+            <!-- ===== Full write-ups (shown in the pop-up) ===== -->
+
+            <template id="p-hvac">
+                <div class="modal-media">
+                    <img src="images/hvac-prototype.jpg" alt="EcoSmart HVAC breadboard prototype with ESP32, relay and sensors">
+                </div>
+                <div class="modal-body">
+                    <p class="project-type">Capstone · Senior Design · Team of 4</p>
+                    <h3>EcoSmart HVAC Control</h3>
+                    <p class="project-summary">An occupancy-aware HVAC controller that reduces energy wasted on
+                        cooling unoccupied rooms.</p>
+                    <div class="project-details">
+                        <div>
+                            <h4>Objective</h4>
+                            <p>Conventional HVAC systems run on fixed schedules and keep cooling rooms after occupants
+                                leave. Our goal was a controller that responds to real-time occupancy while keeping
+                                the room comfortable.</p>
+                        </div>
+                        <div>
+                            <h4>Approach</h4>
+                            <ul>
+                                <li>Detected room occupancy using PIR motion and mmWave presence sensors on an ESP32</li>
+                                <li>Integrated temperature, humidity, and CO₂ sensors into the embedded control logic</li>
+                                <li>Classified each room as empty, lightly occupied, or heavily occupied in real time</li>
+                                <li>Switched the air conditioner through a relay module based on the occupancy state</li>
+                                <li>Implemented an Eco Mode that prevents rapid on/off cycling and improves stability</li>
+                                <li>Paired the embedded controller with a web interface to regulate room airflow</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4>Outcome</h4>
+                            <p>Achieved <strong>80% occupancy-detection accuracy</strong> on a working prototype that
+                                responds to occupancy changes in real time.</p>
+                        </div>
+                    </div>
+                    <div class="tags">
+                        <small>ESP32</small><small>PIR &amp; mmWave</small><small>Arduino</small><small>Relay Control</small><small>Embedded Systems</small>
+                    </div>
+                </div>
+            </template>
+
+            <template id="p-tool">
+                <div class="modal-media">
+                    <img class="contain" src="images/pocket-tool.png" alt="SolidWorks model of a pocket multi-tool, assembled and exploded views">
+                </div>
+                <div class="modal-body">
+                    <p class="project-type">CAD Design · SolidWorks</p>
+                    <h3>Pocket Tool</h3>
+                    <p class="project-summary">A compact multi-tool with 8+ pivoting attachments, fully modeled and
+                        assembled in SolidWorks.</p>
+                    <div class="project-details">
+                        <div>
+                            <h4>Objective</h4>
+                            <p>Design a pocket-sized tool that houses multiple attachments, each able to pivot freely
+                                without interfering with the others.</p>
+                        </div>
+                        <div>
+                            <h4>Approach</h4>
+                            <ul>
+                                <li>Modeled each component in SolidWorks using extrudes, sweeps, and fillets</li>
+                                <li>Assembled 8+ attachments with mates that constrain each one to its pivot axis</li>
+                                <li>Ran interference detection to identify and resolve collisions between parts</li>
+                                <li>Standardized the pivot geometry across attachments for consistent rotation</li>
+                                <li>Optimized part clearances to improve pivot performance and overall fit</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4>Outcome</h4>
+                            <p>A complete, interference-checked assembly with <strong>8+ attachments</strong>,
+                                documented in assembled and exploded views.</p>
+                        </div>
+                    </div>
+                    <div class="tags">
+                        <small>SolidWorks</small><small>3D Modeling</small><small>Assemblies</small><small>Interference Detection</small>
+                    </div>
+                </div>
+            </template>
+
+            <template id="p-traffic">
+                <div class="modal-media state-media" aria-label="Traffic signal state sequence">
+                    <p class="state-title">State Sequence</p>
+                    <ol class="state-list">
+                        <li><span class="lights"><b class="g"></b><b class="r"></b></span>
+                            <div><strong>S0 · Default</strong><small>Main green, cross red; waits for "Walk"</small></div></li>
+                        <li><span class="lights"><b class="a"></b><b class="r"></b></span>
+                            <div><strong>S1 · 4 s</strong><small>Main amber</small></div></li>
+                        <li><span class="lights"><b class="r"></b><b class="g"></b></span>
+                            <div><strong>S2 · 8 s</strong><small>Main red, cross green</small></div></li>
+                        <li><span class="lights"><b class="r"></b><b class="a"></b></span>
+                            <div><strong>S3 · 4 s</strong><small>Cross amber, then back to S0</small></div></li>
+                    </ol>
+                    <p class="state-key"><i class='bx bx-info-circle'></i> Left light: main road · Right light: cross road</p>
+                </div>
+                <div class="modal-body">
+                    <p class="project-type">Digital Logic Design Lab</p>
+                    <h3>Traffic Signal State Machine</h3>
+                    <p class="project-summary">A demand-driven traffic signal controller implemented in hardware as a
+                        finite state machine.</p>
+                    <div class="project-details">
+                        <div>
+                            <h4>Objective</h4>
+                            <p>Keep a high-traffic main road green until a pedestrian requests to cross, then cycle the
+                                intersection safely and return to the default state.</p>
+                        </div>
+                        <div>
+                            <h4>Approach</h4>
+                            <ul>
+                                <li>Defined a four-state diagram with timed transitions of 4 s, 8 s, and 4 s</li>
+                                <li>Implemented the state machine using flip-flops and 74LS-series logic gates</li>
+                                <li>Generated the system clock with a 555 timer circuit to time each signal phase</li>
+                                <li>Designed combinational logic to map each state to six active-low signal lights</li>
+                                <li>Interfaced the circuit with the intersection's 10-pin connector and walk button</li>
+                                <li>Extended the design with adjustable per-light timing and custom light patterns</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4>Outcome</h4>
+                            <p>A <strong>fully working breadboard circuit</strong> that runs the complete signal cycle
+                                on demand.</p>
+                        </div>
+                    </div>
+                    <div class="tags">
+                        <small>Finite State Machines</small><small>Flip-Flops</small><small>74LS Logic</small><small>555 Timer</small><small>Breadboarding</small>
+                    </div>
+                </div>
+            </template>
+
+            <template id="p-sora">
+                <div class="modal-media">
+                    <img class="top" src="images/sora-calibration.jpg" alt="SORA style calibration page with a grid of nine outfit styles">
+                </div>
+                <div class="modal-body">
+                    <p class="project-type">Software Engineering · Team of 6 · Frontend</p>
+                    <h3>SORA</h3>
+                    <p class="project-summary">A smart-closet web app that completes outfits from a user's existing
+                        wardrobe and recommends only 1–2 pieces to buy.</p>
+                    <div class="project-details">
+                        <div>
+                            <h4>Objective</h4>
+                            <p>Online shopping costs time, drives high return rates, and adds to fashion waste. SORA
+                                prioritizes the clothes a user already owns before suggesting anything new.</p>
+                        </div>
+                        <div>
+                            <h4>My Role</h4>
+                            <p>Frontend developer. I built the JavaScript interface for uploading a wardrobe,
+                                calibrating style, and generating outfits, and connected it to the team's Python
+                                recommendation API.</p>
+                        </div>
+                        <div>
+                            <h4>How It Works</h4>
+                            <ul>
+                                <li>Users upload clothing tagged by color, category, occasion, and weather</li>
+                                <li>Style calibration lets users select up to 3 styles, stored in their MySQL profile</li>
+                                <li>The frontend maps clothing tags to outfit slots (e.g., T-shirt → top) before API calls</li>
+                                <li>A Python engine ranks items using TF-IDF vectors and cosine similarity</li>
+                                <li>Empty outfit slots are filled from the wardrobe first, then from a retail catalog</li>
+                                <li>Scores receive a 10% boost for each matching style or live-weather token</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4>Outcome</h4>
+                            <p>Generates <strong>50+ outfit combinations</strong> from a single wardrobe, with fast,
+                                explainable recommendations.</p>
+                        </div>
+                    </div>
+                    <div class="tags">
+                        <small>JavaScript</small><small>HTML/CSS</small><small>API Integration</small><small>Python</small><small>TF-IDF</small><small>MySQL</small>
+                    </div>
+                </div>
+            </template>
+
+            <!-- The pop-up window (filled in by style.js) -->
+            <dialog class="project-modal" id="project-modal" aria-label="Project details">
+                <button class="modal-close" aria-label="Close"><i class='bx bx-x'></i></button>
+                <div class="modal-scroll"></div>
+            </dialog>
+        </div>
+    </section>
+
+    <!-- ================= CONTACT ================= -->
+    <section id="contact">
+        <div class="container">
+            <div class="section-head">
+                <p class="eyebrow">Let's talk</p>
+                <h2 class="section-title"><span>Contact Me</span></h2>
+                <p class="section-sub">Open to a good conversation. Reach out anytime!</p>
+            </div>
+
+            <div class="contact-links">
+                <a href="mailto:rmuriel.180@gmail.com" class="contact-card">
+                    <i class='bx bx-envelope'></i>
+                    <h4>Email</h4>
+                    <p>rmuriel.180@gmail.com</p>
+                </a>
+                <a href="https://www.linkedin.com/in/ryanmuriel/" target="_blank" rel="noopener" class="contact-card">
+                    <i class='bx bxl-linkedin'></i>
+                    <h4>LinkedIn</h4>
+                    <p>linkedin.com/in/ryanmuriel</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Ryan Muriel</p>
+    </footer>
+
+    <script src="style.js"></script>
+</body>
+</html>
